@@ -23,6 +23,7 @@ body{
 #leftArrow{
   width: 60px;
   height: 60px;
+  transform: scaleX(-1);
 }
 
 .imageContainer{
