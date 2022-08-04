@@ -1,0 +1,26 @@
+body{
+  margin: 0;
+}
+
+ul{
+  list-style: none;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 4rem;
+  padding: 0;
+  margin: 0;
+}
+
+li{
+  line-height: 6rem;
+  color: white;
+  width: 4rem;
+  border-bottom: 3px solid white;
+}
+
+.hidden{
+  display: none;
+}
