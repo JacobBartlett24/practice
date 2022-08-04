@@ -1,5 +1,7 @@
 body{
   margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .container{
@@ -31,12 +33,19 @@ body{
   justify-content: center;
   align-items: center;
 }
+
 #currentImage{
   height: clamp(18rem, 26rem, 34rem);
   width: clamp(18rem, 26rem, 34rem);
 }
+
 #imageFrame{
   height: clamp(18rem, 26rem, 34rem);
   width: clamp(18rem, 26rem, 34rem);
   border: 2px solid black;
+}
+
+.imageCounter{
+  width: 100vw;
+  height: 8rem;
 }
