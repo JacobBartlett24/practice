@@ -8,25 +8,29 @@ function image (src, imageNO){
 const imageList = preloadImages();
 
 function switchImage(){
+
   let imageFrame = document.getElementById('imageFrame');
   let currentImage = document.getElementById('currentImage');
   let newImage = document.createElement('img')
-
   let currentImageNO = currentImage.getAttribute('imageno');
 
+  if(Number(currentImageNO) === imageList.length -1) return console.error('End of list');
+
+  console.log(imageList[Number(currentImageNO)+1].src);
+
   newImage = document.createElement('img');
-  newImage.setAttribute('src',`${imageList[currentImageNO+1].src}`);
+  newImage.setAttribute('src',`${imageList[Number(currentImageNO)+1].src}`);
   newImage.setAttribute('id','currentImage');
-  newImage.setAttribute('imageno',`${imageList[currentImageNO+1].imageNO}`);
+  newImage.setAttribute('imageno',`${imageList[Number(currentImageNO)+1].imageNO}`);
  
-  imageFrame.replaceChildren()
+  imageFrame.replaceChildren(newImage);
 }
 
 function clickableArrows(){
   const arrows = document.getElementsByClassName('arrow');
   for (let i = 0; i< arrows.length; i++){
-    arrows[i].addEventListener('click', switchImage());
-    console.log('here');
+    arrows[i].addEventListener('click', switchImage);
+    
   }
 }
 
