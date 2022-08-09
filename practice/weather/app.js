@@ -47,8 +47,27 @@ function createSearchField(){
   container.appendChild(searchField);
 }
 
+function createSubmitButton(){
+  const submitButton = document.createElement('button');
+  submitButton.setAttribute('id','submitButton');
+  submitButton.innerText = 'Submit';
+
+  submitButton.addEventListener('click', () => {
+    getWeatherByLocation(retrieveInput(),displayWeatherInfo);
+  });
+
+  
+  container.appendChild(submitButton);
+}
+
+function retrieveInput(){
+  const searchField = document.getElementById('searchBar');
+  return searchField.value;
+}
+
 function initialLoad(){
   createSearchField();
+  createSubmitButton();
 }
 
 initialLoad();
